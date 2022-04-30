@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
  * |Shft( |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |Shft) |
  * '-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | Alt  | GUI | Ctrl | /Space  /        \Enter \  | LOWER |   \   |GUI/CTRL Swap|
+ *                   | Alt  | GUI | Ctrl | /Space  /        \Enter \  | LOWER |   \   |    #  |
  *                   '----------------------------'          '----------------------------'
  */
 
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,       KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,   KC_U,     KC_I,    KC_O,    KC_P,    KC_BSPC, \
   RCTL_T(KC_DEL),  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,   KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
   KC_LSPO,      KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,  KC_LBRC,  KC_RBRC,  KC_N,     KC_M,     KC_COMM, KC_DOT,  KC_SLSH,  KC_RSPC, \
-                                     KC_LALT, KC_LGUI, KC_LCTL, KC_SPC,     KC_ENT,   MO(_LOWER), KC_NUBS,  MAGIC_SWAP_LCTL_LGUI \
+                                     KC_LALT, KC_LGUI, KC_LCTL, KC_SPC,     KC_ENT,   MO(_LOWER), KC_NUBS, KC_NUHS  \
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | /      /        \      \  |      |   #   |GUI/CTRL Swap|
+ *                   |      |      |      | /      /        \      \  |      | GUI/CTL Unswap | GUI/CTL Swap|
  *                   `----------------------------'           '------''--------------------'
  */
 [_LOWER] = LAYOUT( \
@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_CAPS,    _______, _______, _______, _______, _______,                     _______, KC_HOME, KC_UP,   KC_END,  _______, _______,\
   _______,    _______, _______, _______, _______, _______,                     _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, KC_GRV, \
   _______,    _______, _______, _______, _______, _______,  _______, _______,  _______, _______, _______, _______, _______, _______, \
-                  _______, _______, _______,  _______, _______,  _______, KC_NUHS, MAGIC_UNSWAP_LCTL_LGUI \
+                                _______, _______, _______,  _______, _______,  _______, MAGIC_UNSWAP_LCTL_LGUI, MAGIC_SWAP_LCTL_LGUI \
 ),
 /* RAISE
  * ,-----------------------------------------.                    ,-----------------------------------------.
