@@ -23,6 +23,9 @@ LTO_ENABLE = yes     # Makes hex file smaller
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 SLEEP_LED_ENABLE = no    # Breathing sleep LED during USB suspend
 
+# https://docs.qmk.fm/#/feature_dynamic_macros
+DYNAMIC_MACRO_ENABLE = yes
+
 # If you want to change the display of OLED, you need to change here
 SRC +=  ./lib/rgb_state_reader.c \
         ./lib/layer_state_reader.c \
